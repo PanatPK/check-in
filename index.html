@@ -11,23 +11,24 @@
   body{font-family:var(--sans);background:var(--bg);color:var(--text);min-height:100vh;font-size:15px}
   .topbar{background:var(--text);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:52px;position:sticky;top:0;z-index:100}
   .topbar-brand{font-size:13px;font-family:var(--mono);letter-spacing:0.08em;opacity:0.9}
-  .tab{padding:6px 16px;font-size:12px;background:transparent;color:rgba(255,255,255,0.55);border:none;border-radius:4px;cursor:pointer;transition:all 0.12s;letter-spacing:0.02em}
+  .topbar-right{display:flex;align-items:center;gap:12px}
+  .counter-tag{font-size:12px;font-family:var(--mono);background:rgba(255,255,255,0.15);padding:4px 12px;border-radius:4px;letter-spacing:0.06em}
+  .tab{padding:6px 16px;font-size:12px;background:transparent;color:rgba(255,255,255,0.55);border:none;border-radius:4px;cursor:pointer;transition:all 0.12s}
   .tab:hover{color:rgba(255,255,255,0.85);background:rgba(255,255,255,0.08)}
   .tab.active{color:#fff;background:rgba(255,255,255,0.14)}
   .page{display:none}.page.active{display:block}
   .container{max-width:640px;margin:0 auto;padding:28px 20px}
   .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--text-xmuted);text-transform:uppercase;margin-bottom:6px}
-  .sec-title{font-size:20px;font-weight:600;margin-bottom:20px;line-height:1.2}
+  .sec-title{font-size:20px;font-weight:600;margin-bottom:20px}
   .counter-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;gap:12px}
-  .counter-pills{display:flex;gap:6px}
   .c-pill{padding:6px 16px;border-radius:99px;border:1px solid var(--border-strong);background:var(--surface);font-size:13px;cursor:pointer;transition:all 0.12s;color:var(--text-muted)}
   .c-pill:hover{border-color:var(--text);color:var(--text)}
   .c-pill.active{background:var(--text);color:#fff;border-color:var(--text)}
-  .staff-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
-  .staff-label{font-size:11px;color:var(--text-xmuted);font-family:var(--mono);letter-spacing:0.06em}
+  .c-pill.locked{background:var(--text);color:#fff;border-color:var(--text);cursor:default;opacity:1}
+  .counter-locked-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:99px;padding:5px 14px;font-size:13px;color:#fff;font-family:var(--mono)}
   .staff-select{padding:6px 10px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);font-family:var(--sans);font-size:13px;color:var(--text)}
   .search-wrap{position:relative;margin-bottom:12px}
-  .search-wrap input{width:100%;padding:13px 16px 13px 44px;border:1.5px solid var(--border-strong);border-radius:10px;background:var(--surface);font-family:var(--sans);font-size:15px;color:var(--text);transition:border-color 0.12s;outline:none}
+  .search-wrap input{width:100%;padding:13px 16px 13px 44px;border:1.5px solid var(--border-strong);border-radius:10px;background:var(--surface);font-family:var(--sans);font-size:15px;color:var(--text);outline:none;transition:border-color 0.12s}
   .search-wrap input:focus{border-color:var(--text)}
   .search-wrap input::placeholder{color:var(--text-xmuted)}
   .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-xmuted);font-size:18px;pointer-events:none}
@@ -40,48 +41,27 @@
   .result-names{font-size:13px;color:var(--text-muted);margin-top:2px}
   .badge{font-size:11px;font-weight:500;padding:3px 9px;border-radius:99px;white-space:nowrap}
   .badge-pending{background:var(--blue-light);color:var(--blue)}
-  .badge-half{background:var(--amber-light);color:var(--amber)}
   .badge-done{background:var(--green-light);color:var(--green)}
   .badge-issue{background:var(--red-light);color:var(--red)}
   .detail-wrap{animation:slideUp 0.15s ease}
   @keyframes slideUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
   .doc-order-box{background:var(--amber-light);border:1.5px solid var(--amber-border);border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:20px;margin-bottom:16px}
   .doc-num{font-family:var(--mono);font-size:52px;font-weight:500;color:var(--amber);line-height:1;min-width:64px;text-align:center}
-  .doc-label{font-size:11px;color:var(--amber);opacity:0.75;margin-bottom:4px;font-family:var(--mono);letter-spacing:0.06em}
-  .doc-room{font-size:18px;font-weight:600;color:#5A3A00}
-  .doc-hint{font-size:12px;color:var(--amber);margin-top:4px}
   .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:12px}
   .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
   .info-label{font-size:11px;color:var(--text-xmuted);font-family:var(--mono);letter-spacing:0.06em;margin-bottom:3px}
   .info-value{font-size:15px;font-weight:500}
-  .info-value.big{font-size:22px;color:var(--blue)}
+  .info-value.big{font-size:24px;color:var(--blue)}
   .info-value.mono{font-family:var(--mono);color:var(--amber)}
   .divider{border:none;border-top:1px solid var(--border);margin:16px 0}
-  .guest-sign-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
-  .gs-card{border:1.5px solid var(--border);border-radius:8px;padding:12px;transition:all 0.15s}
-  .gs-card.signed{border-color:var(--green-border);background:var(--green-light)}
-  .gs-card.pending{border-color:var(--blue);background:var(--blue-light)}
-  .gs-name{font-size:14px;font-weight:500;margin-bottom:4px}
-  .gs-status{font-size:12px;color:var(--text-muted);margin-bottom:8px}
-  .gs-status.done{color:var(--green);font-weight:500}
-  .gs-btn{width:100%;padding:7px;border:1px solid var(--border-strong);border-radius:6px;background:transparent;font-size:12px;cursor:pointer;transition:all 0.12s;font-family:var(--sans)}
-  .gs-btn:hover:not(:disabled){background:var(--bg)}
-  .gs-btn.is-signed{background:var(--green-light);color:var(--green);border-color:var(--green-border);cursor:default}
-  .gs-btn.is-pending{background:var(--blue);color:#fff;border-color:var(--blue)}
-  .kc-box{border-radius:10px;padding:14px;margin-bottom:16px}
-  .kc-box.optional{background:var(--bg);border:1px solid var(--border)}
-  .kc-box.required{background:var(--amber-light);border:1.5px solid var(--amber-border)}
-  .kc-box.taken{background:var(--green-light);border:1px solid var(--green-border)}
-  .kc-box.waiting{background:var(--bg);border:1px solid var(--border)}
-  .kc-label{font-size:11px;font-family:var(--mono);letter-spacing:0.06em;font-weight:600;margin-bottom:6px}
-  .kc-label.optional{color:var(--text-muted)}
-  .kc-label.required{color:#854F0B}
-  .kc-label.taken{color:var(--green)}
-  .kc-msg{font-size:13px;margin-bottom:10px}
-  .kc-btns{display:flex;gap:8px}
-  .kc-btn{flex:1;padding:9px 12px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.12s;text-align:center;color:var(--text-muted);font-family:var(--sans)}
-  .kc-btn:hover{border-color:var(--text);color:var(--text)}
-  .kc-btn.selected{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .receiver-label{font-size:11px;color:var(--text-xmuted);font-family:var(--mono);letter-spacing:0.06em;margin-bottom:8px}
+  .receiver-btns{display:flex;gap:8px;margin-bottom:16px}
+  .r-btn{flex:1;padding:11px 12px;border:1.5px solid var(--border-strong);border-radius:8px;background:var(--bg);font-family:var(--sans);font-size:14px;font-weight:500;color:var(--text-muted);cursor:pointer;transition:all 0.12s;text-align:center}
+  .r-btn:hover{border-color:var(--text);color:var(--text)}
+  .r-btn.selected{border-color:var(--blue);background:var(--blue-light);color:var(--blue)}
+  .sig-box{border:1.5px dashed var(--border-strong);border-radius:8px;padding:16px;text-align:center;cursor:pointer;color:var(--text-muted);font-size:14px;transition:all 0.12s;margin-bottom:16px;user-select:none}
+  .sig-box:hover{border-color:var(--text-muted)}
+  .sig-box.signed{border-style:solid;border-color:var(--green-border);background:var(--green-light);color:var(--green);font-weight:500}
   .btn-row{display:flex;gap:8px;align-items:center}
   .btn{padding:10px 18px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-family:var(--sans);font-size:14px;color:var(--text);cursor:pointer;transition:all 0.12s}
   .btn:hover{background:var(--bg)}
@@ -110,35 +90,27 @@
   .filter-select{padding:6px 10px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface);font-family:var(--sans);font-size:12px;color:var(--text)}
   .empty-state{text-align:center;padding:32px;color:var(--text-xmuted);font-size:14px}
   #toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);padding:10px 20px;border-radius:8px;font-size:13px;font-weight:500;z-index:9999;opacity:0;transition:opacity 0.25s;white-space:nowrap;max-width:90vw;pointer-events:none}
-  @media(max-width:480px){.stats-grid{gap:6px}.stat-num{font-size:22px}.doc-num{font-size:40px}}
+  @media(max-width:480px){.stats-grid{gap:6px}.stat-num{font-size:22px}.doc-num{font-size:38px}}
 </style>
 </head>
 <body>
 <div class="topbar">
   <div class="topbar-brand">KEY CARD CHECK-IN</div>
-  <div style="display:flex;gap:2px">
-    <button class="tab active" onclick="switchPage('counter',this)">Counter</button>
-    <button class="tab" onclick="switchPage('pm',this)">PM Dashboard</button>
-    <button class="tab" onclick="switchPage('admin',this)">Admin</button>
+  <div class="topbar-right">
+    <div id="counter-tag"></div>
+    <div style="display:flex;gap:2px">
+      <button class="tab active" onclick="switchPage('counter',this)">Counter</button>
+      <button class="tab" onclick="switchPage('pm',this)">PM Dashboard</button>
+      <button class="tab" onclick="switchPage('admin',this)">Admin</button>
+    </div>
   </div>
 </div>
 
 <!-- COUNTER -->
 <div class="page active" id="page-counter">
   <div class="container">
-    <div class="counter-row">
-      <div>
-        <div class="eyebrow">Counter</div>
-        <div class="counter-pills">
-          <div class="c-pill active" onclick="setCounter(1,this)">Counter 1</div>
-          <div class="c-pill" onclick="setCounter(2,this)">Counter 2</div>
-          <div class="c-pill" onclick="setCounter(3,this)">Counter 3</div>
-        </div>
-      </div>
-      <div class="staff-wrap">
-        <div class="staff-label">STAFF</div>
-        <select class="staff-select" id="staff-sel"><option>Staff A</option><option>Staff B</option></select>
-      </div>
+    <div class="counter-row" id="counter-row">
+      <!-- render by JS -->
     </div>
     <div id="counter-main">
       <div class="search-wrap">
@@ -152,16 +124,26 @@
       <div class="doc-order-box">
         <div class="doc-num" id="doc-num">—</div>
         <div>
-          <div class="doc-label">ลำดับในเอกสาร</div>
-          <div class="doc-room" id="doc-room">ห้อง —</div>
-          <div class="doc-hint" id="doc-env">Env: —</div>
+          <div style="font-size:11px;color:var(--amber);opacity:0.8;font-family:var(--mono);letter-spacing:0.06em;margin-bottom:4px">ลำดับในเอกสาร</div>
+          <div style="font-size:18px;font-weight:600;color:#5A3A00" id="doc-room">ห้อง —</div>
+          <div style="font-size:12px;color:var(--amber);margin-top:4px" id="doc-env">Env: —</div>
         </div>
       </div>
       <div class="card">
-        <div class="info-label" style="margin-bottom:8px">เซ็นเอกสาร</div>
-        <div class="guest-sign-grid" id="guest-sign-grid"></div>
+        <div class="info-grid">
+          <div><div class="info-label">ห้อง</div><div class="info-value big" id="d-room">—</div></div>
+          <div><div class="info-label">Envelope No.</div><div class="info-value mono" id="d-env">—</div></div>
+          <div><div class="info-label">ผู้เข้าพัก 1</div><div class="info-value" id="d-guest1">—</div></div>
+          <div><div class="info-label">ผู้เข้าพัก 2</div><div class="info-value" id="d-guest2">—</div></div>
+        </div>
         <div class="divider"></div>
-        <div id="keycard-section"></div>
+        <div class="receiver-label">ใครมารับ Key Card?</div>
+        <div class="receiver-btns">
+          <div class="r-btn" id="rbtn-0" onclick="selectReceiver(0)">—</div>
+          <div class="r-btn" id="rbtn-1" onclick="selectReceiver(1)">—</div>
+        </div>
+        <div class="receiver-label">ยืนยันการเซ็นเอกสาร</div>
+        <div class="sig-box" id="sig-box" onclick="toggleSign()">แตะเพื่อยืนยันว่าแขกเซ็นแล้ว</div>
         <div class="btn-row">
           <button class="btn" onclick="backToSearch()">← ย้อนกลับ</button>
           <button class="btn btn-danger ml-auto" onclick="escalatePM()">⚠ ส่ง PM</button>
@@ -179,8 +161,8 @@
     <div class="sec-title">ภาพรวมการเช็คอิน</div>
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-num" id="pm-total">0</div><div class="stat-lbl">ทั้งหมด (ห้อง)</div></div>
-      <div class="stat-card"><div class="stat-num" id="pm-done" style="color:var(--green)">0</div><div class="stat-lbl">ครบทั้งคู่</div></div>
-      <div class="stat-card"><div class="stat-num" id="pm-half" style="color:var(--amber)">0</div><div class="stat-lbl">เซ็นแล้ว 1 คน</div></div>
+      <div class="stat-card"><div class="stat-num" id="pm-done" style="color:var(--green)">0</div><div class="stat-lbl">รับแล้ว</div></div>
+      <div class="stat-card"><div class="stat-num" id="pm-pct" style="color:var(--blue)">0%</div><div class="stat-lbl">คืบหน้า</div></div>
     </div>
     <div class="card" style="margin-bottom:16px">
       <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--text-muted)"><span>Progress</span><span id="pm-prog-txt" style="font-family:var(--mono)">0 / 0</span></div>
@@ -197,9 +179,8 @@
         <div style="display:flex;gap:8px">
           <select class="filter-select" id="room-filter" onchange="filterRooms(this.value)">
             <option value="all">ทั้งหมด</option>
-            <option value="pending">ยังไม่เซ็น</option>
-            <option value="half">เซ็น 1 คน</option>
-            <option value="done">ครบแล้ว</option>
+            <option value="pending">รอรับ</option>
+            <option value="done">รับแล้ว</option>
             <option value="issue">มีปัญหา</option>
           </select>
           <button class="btn btn-sm" onclick="exportCSV()">↓ Export</button>
@@ -240,28 +221,71 @@
       <div class="alert alert-danger" style="margin-bottom:10px">⚠ ลบข้อมูลการเช็คอินทั้งหมด</div>
       <button class="btn btn-danger" onclick="resetSystem()">รีเซ็ต</button>
     </div>
+    <div class="card">
+      <div style="font-weight:600;margin-bottom:8px">URL สำหรับแต่ละ Counter</div>
+      <div id="url-list" style="font-size:13px;line-height:2"></div>
+    </div>
   </div>
 </div>
 
 <div id="toast"></div>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
 let rooms=[], logs=[], issues=[];
-let currentCounter=1, currentRoom=null;
-let pendingSign={0:false,1:false}, pendingKeycard=null;
+let selectedReceiver=null, signed=false, currentRoom=null;
+
+// อ่าน ?counter= จาก URL
+const urlParams=new URLSearchParams(window.location.search);
+const lockedCounter=parseInt(urlParams.get('counter'))||null; // null = ไม่ล็อค
+let currentCounter=lockedCounter||1;
+
+// render counter row
+function renderCounterRow(){
+  const row=document.getElementById('counter-row');
+  if(lockedCounter){
+    // ล็อค — แสดง badge + staff selector
+    row.innerHTML=`
+      <div>
+        <div class="eyebrow">Counter</div>
+        <div class="counter-locked-badge" style="background:var(--blue-light);border-color:var(--blue);color:var(--blue);font-size:14px;font-weight:600">Counter ${lockedCounter}</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:11px;color:var(--text-xmuted);font-family:var(--mono);letter-spacing:0.06em;margin-bottom:4px">STAFF</div>
+        <select class="staff-select" id="staff-sel"><option>Staff A</option><option>Staff B</option></select>
+      </div>`;
+    // topbar tag
+    document.getElementById('counter-tag').innerHTML=`<div class="counter-tag">COUNTER ${lockedCounter}</div>`;
+  } else {
+    // ไม่ล็อค — เลือกได้ปกติ
+    row.innerHTML=`
+      <div>
+        <div class="eyebrow">Counter</div>
+        <div style="display:flex;gap:6px">
+          <div class="c-pill${currentCounter===1?' active':''}" onclick="setCounter(1,this)">Counter 1</div>
+          <div class="c-pill${currentCounter===2?' active':''}" onclick="setCounter(2,this)">Counter 2</div>
+          <div class="c-pill${currentCounter===3?' active':''}" onclick="setCounter(3,this)">Counter 3</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:11px;color:var(--text-xmuted);font-family:var(--mono);letter-spacing:0.06em;margin-bottom:4px">STAFF</div>
+        <select class="staff-select" id="staff-sel"><option>Staff A</option><option>Staff B</option></select>
+      </div>`;
+  }
+}
+
+// render URL list ใน Admin
+function renderUrlList(){
+  const base=window.location.origin+window.location.pathname;
+  document.getElementById('url-list').innerHTML=
+    [1,2,3].map(n=>`<div>Counter ${n}: <a href="${base}?counter=${n}" target="_blank" style="color:var(--blue);font-family:var(--mono);font-size:12px">${base}?counter=${n}</a></div>`).join('')+
+    `<div style="margin-top:4px">PM (ไม่ล็อค): <a href="${base}" target="_blank" style="color:var(--blue);font-family:var(--mono);font-size:12px">${base}</a></div>`;
+}
 
 function thaiSort(a,b){return a.guest1.localeCompare(b.guest1,'th');}
 function assignDocOrder(){[...rooms].sort(thaiSort).forEach((r,i)=>{const o=rooms.find(x=>x.id===r.id);if(o)o.docOrder=i+1;});}
-function roomStatus(r){if(r.status==='issue')return 'issue';const n=(r.signed0?1:0)+(r.signed1?1:0);return n===2?'done':n===1?'half':'pending';}
-function currentSigners(){return [0,1].filter(i=>pendingSign[i]);}
-function prevSignedCount(){return (currentRoom.signed0?1:0)+(currentRoom.signed1?1:0);}
-function totalSignedAfter(){return prevSignedCount()+currentSigners().length;}
-function keycardRequired(){return !currentRoom.keycardTaken&&totalSignedAfter()===2;}
+function roomStatus(r){if(r.status==='issue')return'issue';return r.done?'done':'pending';}
+function makeRoom(d,i){return{...d,id:'r'+i,done:false,receiver:'',receiverTime:'',status:'',docOrder:0};}
 
-function makeRoom(d,i){return{...d,id:'r'+i,signed0:false,signed1:false,signTime0:'',signTime1:'',keycardTaken:false,keycardBy:'',keycardTime:'',status:'',docOrder:0};}
-
-// โหลดข้อมูลตัวอย่างอัตโนมัติ
 function loadDemo(){
   const d=[
     {room:'101',guest1:'สมชาย ใจดี',guest2:'สมหญิง รักดี',envelope:'001'},
@@ -290,10 +314,16 @@ function switchPage(p,el){
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
   document.getElementById('page-'+p).classList.add('active');
   el.classList.add('active');
-  if(p==='pm') renderPM();
-  if(p==='admin') renderDocOrderPreview();
+  if(p==='pm')renderPM();
+  if(p==='admin'){renderDocOrderPreview();renderUrlList();}
 }
-function setCounter(n,el){currentCounter=n;document.querySelectorAll('.c-pill').forEach(x=>x.classList.remove('active'));el.classList.add('active');}
+
+function setCounter(n,el){
+  if(lockedCounter)return;
+  currentCounter=n;
+  document.querySelectorAll('.c-pill').forEach(x=>x.classList.remove('active'));
+  el.classList.add('active');
+}
 
 function searchGuest(q){
   const res=document.getElementById('search-results');
@@ -302,9 +332,9 @@ function searchGuest(q){
   const m=rooms.filter(r=>r.guest1.toLowerCase().includes(ql)||r.guest2.toLowerCase().includes(ql)||r.room.includes(ql)).slice(0,8);
   if(!m.length){res.innerHTML='<div class="empty-state">ไม่พบชื่อในระบบ</div>';return;}
   res.innerHTML='<div class="results-box">'+m.map(r=>{
-    const st=roomStatus(r);const n=(r.signed0?1:0)+(r.signed1?1:0);
-    const lbl=st==='done'?'ครบแล้ว':st==='half'?`เซ็น ${n}/2`:st==='issue'?'มีปัญหา':'รอเซ็น';
-    const cls=st==='done'?'badge-done':st==='half'?'badge-half':st==='issue'?'badge-issue':'badge-pending';
+    const st=roomStatus(r);
+    const lbl=st==='done'?'รับแล้ว':st==='issue'?'มีปัญหา':'รอรับ';
+    const cls=st==='done'?'badge-done':st==='issue'?'badge-issue':'badge-pending';
     return `<div class="result-item" onclick="showRoom('${r.id}')">
       <div><div class="result-room">ห้อง ${r.room}<span class="result-order">#${r.docOrder}</span></div>
       <div class="result-names">${r.guest1} · ${r.guest2}</div></div>
@@ -314,89 +344,72 @@ function searchGuest(q){
 
 function showRoom(id){
   currentRoom=rooms.find(r=>r.id===id);if(!currentRoom)return;
-  pendingSign={0:false,1:false};pendingKeycard=null;
+  selectedReceiver=null;signed=false;
   document.getElementById('counter-main').style.display='none';
   document.getElementById('guest-detail').style.display='block';
   document.getElementById('doc-num').textContent=currentRoom.docOrder;
   document.getElementById('doc-room').textContent='ห้อง '+currentRoom.room;
   document.getElementById('doc-env').textContent='Env: '+currentRoom.envelope;
-  document.getElementById('status-alert').innerHTML=currentRoom.status==='issue'?'<div class="alert alert-danger">⚠ ห้องนี้ถูกส่งให้ PM แล้ว</div>':'';
-  renderAll();
+  document.getElementById('d-room').textContent=currentRoom.room;
+  document.getElementById('d-env').textContent=currentRoom.envelope;
+  document.getElementById('d-guest1').textContent=currentRoom.guest1;
+  document.getElementById('d-guest2').textContent=currentRoom.guest2||'-';
+  document.getElementById('rbtn-0').textContent=currentRoom.guest1;
+  document.getElementById('rbtn-1').textContent=currentRoom.guest2||'-';
+  document.getElementById('rbtn-0').className='r-btn';
+  document.getElementById('rbtn-1').className='r-btn';
+  const sig=document.getElementById('sig-box');
+  sig.textContent='แตะเพื่อยืนยันว่าแขกเซ็นแล้ว';sig.className='sig-box';
+  document.getElementById('confirm-btn').disabled=true;
+  const a=document.getElementById('status-alert');
+  if(currentRoom.done){a.innerHTML=`<div class="alert alert-warn">⚠ ห้องนี้รับ Key Card ไปแล้ว — ${currentRoom.receiver} เวลา ${currentRoom.receiverTime}</div>`;}
+  else if(currentRoom.status==='issue'){a.innerHTML=`<div class="alert alert-danger">⚠ ห้องนี้ถูกส่งให้ PM แล้ว</div>`;}
+  else{a.innerHTML='';}
 }
 
-function renderAll(){renderGuestCards();renderKeycard();checkReady();}
-
-function renderGuestCards(){
-  const guests=[currentRoom.guest1,currentRoom.guest2];
-  const signed=[currentRoom.signed0,currentRoom.signed1];
-  const times=[currentRoom.signTime0,currentRoom.signTime1];
-  document.getElementById('guest-sign-grid').innerHTML=guests.map((name,i)=>{
-    const isDone=signed[i],isPending=pendingSign[i];
-    return `<div class="gs-card${isDone?' signed':isPending?' pending':''}">
-      <div class="gs-name">${name}</div>
-      <div class="gs-status${isDone?' done':''}">${isDone?`✓ เซ็นแล้ว ${times[i]}`:'ยังไม่เซ็น'}</div>
-      <button class="gs-btn${isDone?' is-signed':isPending?' is-pending':''}" onclick="toggleSign(${i})" ${isDone?'disabled':''}>${isDone?'เซ็นแล้ว':isPending?'✓ ยืนยัน':'เซ็นแล้ว'}</button>
-    </div>`;
-  }).join('');
+function selectReceiver(i){
+  if(currentRoom&&currentRoom.done)return;
+  selectedReceiver=i;
+  document.getElementById('rbtn-0').className=i===0?'r-btn selected':'r-btn';
+  document.getElementById('rbtn-1').className=i===1?'r-btn selected':'r-btn';
+  checkReady();
 }
 
-function toggleSign(i){
-  if(i===0&&currentRoom.signed0)return;
-  if(i===1&&currentRoom.signed1)return;
-  pendingSign[i]=!pendingSign[i];
-  if(!pendingSign[i]&&pendingKeycard===i)pendingKeycard=null;
-  renderAll();
+function toggleSign(){
+  if(currentRoom&&currentRoom.done)return;
+  signed=!signed;
+  const sig=document.getElementById('sig-box');
+  if(signed){sig.textContent='✓ ยืนยันแล้ว — แขกเซ็นเอกสารเรียบร้อย';sig.className='sig-box signed';}
+  else{sig.textContent='แตะเพื่อยืนยันว่าแขกเซ็นแล้ว';sig.className='sig-box';}
+  checkReady();
 }
 
-function renderKeycard(){
-  const sec=document.getElementById('keycard-section');
-  if(currentRoom.keycardTaken){
-    sec.innerHTML=`<div class="kc-box taken"><div class="kc-label taken">🗝 Key Card</div><div style="font-size:14px;font-weight:500;color:var(--green)">✓ รับแล้วโดย ${currentRoom.keycardBy} (${currentRoom.keycardTime})</div></div>`;return;
-  }
-  const signers=currentSigners();
-  if(!signers.length){
-    sec.innerHTML=`<div class="kc-box waiting"><div class="kc-label optional">🗝 Key Card</div><div style="font-size:13px;color:var(--text-muted)">เลือกผู้เซ็นก่อน</div></div>`;return;
-  }
-  const req=keycardRequired();
-  const guests=[currentRoom.guest1,currentRoom.guest2];
-  const btns=signers.map(i=>`<div class="kc-btn${pendingKeycard===i?' selected':''}" onclick="assignKeycard(${i})">${guests[i]}</div>`).join('');
-  sec.innerHTML=`<div class="kc-box ${req?'required':'optional'}">
-    <div class="kc-label ${req?'required':'optional'}">🗝 Key Card${req?' — บังคับรับ':' — รับหรือไม่ก็ได้'}</div>
-    <div class="kc-msg" style="font-size:13px;color:${req?'#633806':'var(--text-muted)'};margin-bottom:10px">${req?'ผู้เข้าพักคนสุดท้าย — ต้องรับ Key Card ก่อน Confirm':'ถ้าไม่รับตอนนี้ คนที่สองต้องรับ'}</div>
-    <div class="kc-btns">${btns}</div></div>`;
-}
-
-function assignKeycard(i){if(currentRoom.keycardTaken)return;pendingKeycard=pendingKeycard===i?null:i;renderKeycard();checkReady();}
-
-function checkReady(){
-  const hasSign=pendingSign[0]||pendingSign[1];
-  const kcOk=keycardRequired()?(pendingKeycard!==null):true;
-  document.getElementById('confirm-btn').disabled=!(hasSign&&kcOk);
-}
+function checkReady(){document.getElementById('confirm-btn').disabled=!(signed&&selectedReceiver!==null);}
 
 function confirmCheckin(){
-  if(!currentRoom)return;
+  if(!currentRoom||!signed||selectedReceiver===null)return;
   const now=new Date();
   const time=now.getHours().toString().padStart(2,'0')+':'+now.getMinutes().toString().padStart(2,'0');
   const staff=document.getElementById('staff-sel').value;
-  if(pendingSign[0]){currentRoom.signed0=true;currentRoom.signTime0=time;}
-  if(pendingSign[1]){currentRoom.signed1=true;currentRoom.signTime1=time;}
-  if(pendingKeycard!==null&&!currentRoom.keycardTaken){currentRoom.keycardTaken=true;currentRoom.keycardBy=pendingKeycard===0?currentRoom.guest1:currentRoom.guest2;currentRoom.keycardTime=time;}
-  const signed=(currentRoom.signed0?1:0)+(currentRoom.signed1?1:0);
-  logs.push({roomId:currentRoom.id,room:currentRoom.room,counter:currentCounter,staff,time,signed,keycardBy:currentRoom.keycardBy||'-'});
-  const room=currentRoom.room;backToSearch();
-  showToast(signed===2?`✓ ครบทั้งสองคน — ห้อง ${room}`:`✓ บันทึกแล้ว — ห้อง ${room} (เซ็น ${signed}/2)`);
+  currentRoom.done=true;
+  currentRoom.receiver=selectedReceiver===0?currentRoom.guest1:currentRoom.guest2;
+  currentRoom.receiverTime=time;
+  logs.push({roomId:currentRoom.id,room:currentRoom.room,counter:currentCounter,staff,time,receiver:currentRoom.receiver});
+  const room=currentRoom.room,rec=currentRoom.receiver;
+  backToSearch();
+  showToast(`✓ เช็คอินเรียบร้อย — ห้อง ${room} รับโดย ${rec}`);
 }
 
 function escalatePM(){
   if(!currentRoom)return;
   currentRoom.status='issue';
   issues.push({room:currentRoom.room,guest1:currentRoom.guest1,guest2:currentRoom.guest2,time:new Date().toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'}),counter:currentCounter});
-  const room=currentRoom.room;backToSearch();showToast('ส่งต่อ PM — ห้อง '+room,'warn');
+  const room=currentRoom.room;backToSearch();
+  showToast('ส่งต่อ PM — ห้อง '+room,'warn');
 }
 
 function backToSearch(){
-  currentRoom=null;pendingSign={0:false,1:false};pendingKeycard=null;
+  currentRoom=null;selectedReceiver=null;signed=false;
   document.getElementById('counter-main').style.display='block';
   document.getElementById('guest-detail').style.display='none';
   document.getElementById('search-input').value='';
@@ -404,14 +417,14 @@ function backToSearch(){
 }
 
 function renderPM(){
-  const total=rooms.length,done=rooms.filter(r=>roomStatus(r)==='done').length,half=rooms.filter(r=>roomStatus(r)==='half').length;
+  const total=rooms.length,done=rooms.filter(r=>r.done).length;
   const pct=total?Math.round(done/total*100):0;
   document.getElementById('pm-total').textContent=total;
   document.getElementById('pm-done').textContent=done;
-  document.getElementById('pm-half').textContent=half;
+  document.getElementById('pm-pct').textContent=pct+'%';
   document.getElementById('pm-prog-txt').textContent=done+' / '+total;
   document.getElementById('pm-prog-bar').style.width=pct+'%';
-  [1,2,3].forEach(c=>{document.getElementById('pm-c'+c).textContent=new Set(logs.filter(l=>l.counter===c).map(l=>l.roomId)).size;});
+  [1,2,3].forEach(c=>{document.getElementById('pm-c'+c).textContent=logs.filter(l=>l.counter===c).length;});
   filterRooms(document.getElementById('room-filter').value);
   if(issues.length){
     document.getElementById('issue-panel').style.display='block';
@@ -425,13 +438,13 @@ function filterRooms(f){
   const el=document.getElementById('room-list');
   if(!sorted.length){el.innerHTML='<div class="empty-state">ไม่มีรายการ</div>';return;}
   el.innerHTML=sorted.map(r=>{
-    const st=roomStatus(r),n=(r.signed0?1:0)+(r.signed1?1:0);
-    const lbl=st==='done'?'ครบแล้ว':st==='half'?`เซ็น ${n}/2`:st==='issue'?'มีปัญหา':'รอเซ็น';
-    const cls=st==='done'?'badge-done':st==='half'?'badge-half':st==='issue'?'badge-issue':'badge-pending';
+    const st=roomStatus(r);
+    const lbl=st==='done'?'รับแล้ว':st==='issue'?'มีปัญหา':'รอรับ';
+    const cls=st==='done'?'badge-done':st==='issue'?'badge-issue':'badge-pending';
     return `<div class="room-row"><div style="display:flex;align-items:center">
       <div class="room-order">${r.docOrder}</div>
       <div><div style="font-weight:500">ห้อง ${r.room}</div>
-      <div style="font-size:12px;color:var(--text-muted)">${r.guest1} · ${r.guest2}${r.keycardTaken?' · 🗝 '+r.keycardBy:''}</div></div>
+      <div style="font-size:12px;color:var(--text-muted)">${r.guest1} · ${r.guest2}${r.done?' · 🗝 '+r.receiver+' '+r.receiverTime:''}</div></div>
     </div><span class="badge ${cls}">${lbl}</span></div>`;
   }).join('');
 }
@@ -451,8 +464,11 @@ function renderDocOrderPreview(){
 
 function exportCSV(){
   if(!rooms.length){showToast('ไม่มีข้อมูล','warn');return;}
-  const rows=[['ลำดับ','เลขห้อง','ผู้เข้าพัก1','เซ็น1','เวลา1','ผู้เข้าพัก2','เซ็น2','เวลา2','Envelope','Key Card รับโดย','เวลารับ','สถานะ']];
-  [...rooms].sort(thaiSort).forEach(r=>{rows.push([r.docOrder,r.room,r.guest1,r.signed0?'✓':'',r.signTime0||'',r.guest2,r.signed1?'✓':'',r.signTime1||'',r.envelope,r.keycardBy||'',r.keycardTime||'',roomStatus(r)==='done'?'ครบ':roomStatus(r)==='half'?'เซ็น1คน':'รอ']);});
+  const rows=[['ลำดับ','เลขห้อง','ผู้เข้าพัก1','ผู้เข้าพัก2','Envelope','ผู้รับ Key Card','เวลา','Counter','Staff','สถานะ']];
+  [...rooms].sort(thaiSort).forEach(r=>{
+    const log=logs.find(l=>l.roomId===r.id);
+    rows.push([r.docOrder,r.room,r.guest1,r.guest2,r.envelope,r.receiver||'',r.receiverTime||'',log?log.counter:'',log?log.staff:'',r.done?'รับแล้ว':r.status==='issue'?'มีปัญหา':'รอรับ']);
+  });
   const csv=rows.map(r=>r.join(',')).join('\n');
   const a=document.createElement('a');a.href=URL.createObjectURL(new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8'}));a.download='checkin_export.csv';a.click();
   showToast('Export เรียบร้อย');
@@ -463,39 +479,24 @@ function handleFile(input){
   const ext=file.name.split('.').pop().toLowerCase();
   if(ext==='xlsx'){
     const reader=new FileReader();
-    reader.onload=e=>{
-      const wb=XLSX.read(e.target.result,{type:'array'});
-      const ws=wb.Sheets[wb.SheetNames[0]];
-      const rows=XLSX.utils.sheet_to_json(ws,{header:1});
-      processRows(rows);
-    };
+    reader.onload=e=>{const wb=XLSX.read(e.target.result,{type:'array'});processRows(XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]],{header:1}));};
     reader.readAsArrayBuffer(file);
   } else {
     const reader=new FileReader();
-    reader.onload=e=>{
-      const lines=e.target.result.split('\n').filter(l=>l.trim());
-      const rows=lines.map(l=>l.split(','));
-      processRows(rows);
-    };
+    reader.onload=e=>processRows(e.target.result.split('\n').filter(l=>l.trim()).map(l=>l.split(',')));
     reader.readAsText(file,'UTF-8');
   }
 }
 
 function processRows(rows){
   const data=rows.slice(1).map((c,i)=>c.length>=4?makeRoom({room:String(c[0]||'').trim(),guest1:String(c[1]||'').trim(),guest2:String(c[2]||'').trim(),envelope:String(c[3]||'').trim()},i):null).filter(Boolean);
-  if(data.length){
-    rooms=data;assignDocOrder();
-    document.getElementById('upload-status').innerHTML=`<div class="alert alert-success" style="margin-top:10px">✓ โหลดสำเร็จ ${data.length} ห้อง</div>`;
-    renderDocOrderPreview();
-  } else {
-    document.getElementById('upload-status').innerHTML=`<div class="alert alert-danger" style="margin-top:10px">รูปแบบไฟล์ไม่ถูกต้อง</div>`;
-  }
+  if(data.length){rooms=data;assignDocOrder();document.getElementById('upload-status').innerHTML=`<div class="alert alert-success" style="margin-top:10px">✓ โหลดสำเร็จ ${data.length} ห้อง</div>`;renderDocOrderPreview();}
+  else document.getElementById('upload-status').innerHTML=`<div class="alert alert-danger" style="margin-top:10px">รูปแบบไฟล์ไม่ถูกต้อง</div>`;
 }
 
 function resetSystem(){
   if(!confirm('ยืนยันรีเซ็ตทั้งหมด?'))return;
-  rooms=[];logs=[];issues=[];
-  renderDocOrderPreview();showToast('รีเซ็ตเรียบร้อย','warn');
+  rooms=[];logs=[];issues=[];renderDocOrderPreview();showToast('รีเซ็ตเรียบร้อย','warn');
 }
 
 let toastTimer;
@@ -508,7 +509,7 @@ function showToast(msg,type='success'){
   toastTimer=setTimeout(()=>{t.style.opacity='0';},3000);
 }
 
-// โหลดข้อมูลตัวอย่างอัตโนมัติตอนเปิด
+renderCounterRow();
 loadDemo();
 </script>
 </body>
